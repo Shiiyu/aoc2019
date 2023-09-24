@@ -1,2 +1,7 @@
-# aoc2019
-My solutions for Advent of Code 2019
+# Advent of Code 2019
+
+These are my solutions for AoC 2019 in JavaScript.
+
+## AoC Puzzles
+
+https://adventofcode.com/2019

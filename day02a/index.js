@@ -9,11 +9,11 @@ fs.readFile("./input.txt", "utf8", (_, data) => {
   loop: for(let i = 0; i < input.length; i += 4) {
     switch(input[i]) {
       case 1:
-        input[input[i + 3]] = input[input[i + 1]] + input[input[i + 2]];
+        input[input[i+3]] = input[input[i+1]] + input[input[i+2]];
 
         break;
       case 2:
-        input[input[i + 3]] = input[input[i + 1]] * input[input[i + 2]];
+        input[input[i+3]] = input[input[i+1]] * input[input[i+2]];
 
         break;
       default:

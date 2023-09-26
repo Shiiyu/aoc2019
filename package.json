@@ -1,0 +1,9 @@
+{
+    "name": "aoc2019",
+    "version": "1.0.0",
+    "description": "Advent of Code 2019",
+    "type": "module",
+    "devDependencies": {
+        "eslint": "^8.50.0"
+    }
+}

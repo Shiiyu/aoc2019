@@ -17,8 +17,6 @@ fs.readFile("./input.txt", "utf8", (_, data) => {
 
         break;
       default:
-        console.log(input[i]);
-
         break loop;
     }
   }

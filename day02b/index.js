@@ -20,19 +20,28 @@ function processIntcode(intcode) {
 }
 
 fs.readFile("./input.txt", "utf8", (_, data) => {
-  const input = data.split(",").map(n => Number(n));
+  // Date of Apollo 11 moon landing
+  const moonLanding = 19690720;
+  // Get base intcode and clone into arrays for noun and verb
+  const baseIntcode = data.split(",").map(n => Number(n));
+  const nounIntcode = [...baseIntcode];
+  const verbIntcode = [...baseIntcode];
 
-  for(let i = 0; i < 100; i++) {
-    for(let j = 0; j < 100; j++) {
-      const intcode = [...input];
+  // Increment the respective index for noun and verb
+  nounIntcode[1] += 1;
+  verbIntcode[2] += 1;
 
-      intcode[1] = i;
-      intcode[2] = j;
+  // Get output for each intcode
+  const baseOutput = processIntcode(baseIntcode);
+  const nounOutput = processIntcode(nounIntcode);
+  const verbOutput = processIntcode(verbIntcode);
+  // Calculate differences between the base intcode and the noun, verb, and moon landing
+  const moonDiff = moonLanding - baseOutput;
+  const nounDiff = nounOutput - baseOutput;
+  const verbDiff = verbOutput - baseOutput;
+  // Calculate the noun and verb
+  const noun = Math.floor(moonDiff / nounDiff);
+  const verb = moonDiff % noun / verbDiff;
 
-      const output = processIntcode(intcode);
-
-      if(output === 19690720)
-        console.log((100 * i) + j);
-    }
-  }
+  console.log((100 * noun) + verb);
 });

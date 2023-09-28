@@ -1,7 +1,7 @@
 import {readFile} from "fs";
 
 readFile("./input.txt", "utf8", (_, data) => {
-  const input = data.split(",").map(n => Number(n));
+  const input = data.split(",").map(Number);
 
   input[1] = 12;
   input[2] = 2;

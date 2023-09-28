@@ -23,7 +23,7 @@ readFile("./input.txt", "utf8", (_, data) => {
   // Date of Apollo 11 moon landing
   const moonLanding = 19690720;
   // Get base intcode and clone into arrays for noun and verb
-  const baseIntcode = data.split(",").map(n => Number(n));
+  const baseIntcode = data.split(",").map(Number);
   const nounIntcode = [...baseIntcode];
   const verbIntcode = [...baseIntcode];
 

@@ -28,8 +28,8 @@ readFile("./input.txt", "utf8", (_, data) => {
   const verbIntcode = [...baseIntcode];
 
   // Increment the respective index for noun and verb
-  nounIntcode[1] += 1;
-  verbIntcode[2] += 1;
+  nounIntcode[1]++;
+  verbIntcode[2]++;
 
   // Get output for each intcode
   const baseOutput = processIntcode(baseIntcode);

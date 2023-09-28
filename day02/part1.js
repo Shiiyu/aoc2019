@@ -1,6 +1,6 @@
-import * as fs from "fs";
+import {readFile} from "fs";
 
-fs.readFile("./input.txt", "utf8", (_, data) => {
+readFile("./input.txt", "utf8", (_, data) => {
   const input = data.split(",").map(n => Number(n));
 
   input[1] = 12;

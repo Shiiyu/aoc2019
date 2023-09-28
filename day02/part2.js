@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import {readFile} from "fs";
 
 function processIntcode(intcode) {
   loop: for(let i = 0; i < intcode.length; i += 4) {
@@ -19,7 +19,7 @@ function processIntcode(intcode) {
   return intcode[0];
 }
 
-fs.readFile("./input.txt", "utf8", (_, data) => {
+readFile("./input.txt", "utf8", (_, data) => {
   // Date of Apollo 11 moon landing
   const moonLanding = 19690720;
   // Get base intcode and clone into arrays for noun and verb

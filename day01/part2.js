@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import {readFile} from "fs";
 
 function totalFuel(mass) {
   const fuel = Math.floor(mass / 3) - 2;
@@ -8,6 +8,6 @@ function totalFuel(mass) {
     : 0;
 }
 
-fs.readFile("./input.txt", "utf8", (_, data) => {
+readFile("./input.txt", "utf8", (_, data) => {
   console.log(data.split("\n").map(n => totalFuel(Number(n))).reduce((a, b) => a + b));
 });

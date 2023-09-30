@@ -1,19 +1,19 @@
 import {readFile} from "fs";
 
-readFile("./input.txt", "utf8", (_, data) => {
-  const input = data.split(",").map(Number);
+readFile("./input+-.txt", "utf8", (_, data) => {
+  const intcode = data.split(",").map(Number);
 
-  input[1] = 12;
-  input[2] = 2;
+  intcode[1] = 12;
+  intcode[2] = 2;
 
-  loop: for(let i = 0; i < input.length; i += 4) {
-    switch(input[i]) {
+  loop: for(let i = 0; i < intcode.length; i += 4) {
+    switch(intcode[i]) {
       case 1:
-        input[input[i+3]] = input[input[i+1]] + input[input[i+2]];
+        intcode[intcode[i+3]] = intcode[intcode[i+1]] + intcode[intcode[i+2]];
 
         break;
       case 2:
-        input[input[i+3]] = input[input[i+1]] * input[input[i+2]];
+        intcode[intcode[i+3]] = intcode[intcode[i+1]] * intcode[intcode[i+2]];
 
         break;
       default:
@@ -21,5 +21,5 @@ readFile("./input.txt", "utf8", (_, data) => {
     }
   }
 
-  console.log(input[0]);
+  console.log(intcode[0]);
 });

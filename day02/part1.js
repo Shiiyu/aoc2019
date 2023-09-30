@@ -1,6 +1,6 @@
 import {readFile} from "fs";
 
-readFile("./input+-.txt", "utf8", (_, data) => {
+readFile("./input.txt", "utf8", (_, data) => {
   const intcode = data.split(",").map(Number);
 
   intcode[1] = 12;
